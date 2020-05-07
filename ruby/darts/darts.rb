@@ -6,7 +6,7 @@ class Darts
   end
 
   def score
-    if (@radius < 1)
+    if (@radius <= 1)
       10
     elsif (@radius <= 5)
       5
