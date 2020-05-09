@@ -8,6 +8,7 @@ To get started with TDD, see the `README.md` file in your
 
 class Acronym
   def self.abbreviate(name)
-    name.split(/\W/).map(&:chr).join.upcase
+    # Scan the name to find first letter and join to form acronym
+    name.scan(/\b[a-z]/i).join.upcase
   end
 end
