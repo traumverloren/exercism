@@ -10,7 +10,7 @@ class SpaceAge
   EARTH_ORBITAL_PERIOD_IN_SECONDS = 31_557_600
 
   ORBITAL_PERIOD_RATES = {
-    earth: 1.0,
+    earth: 1,
     mercury: 0.2408467,
     venus: 0.61519726,
     mars: 1.8808158,
@@ -59,6 +59,7 @@ class SpaceAge
   private
 
   def on_planet(planet)
-    @seconds / (ORBITAL_PERIOD_RATES[planet] * EARTH_ORBITAL_PERIOD_IN_SECONDS)
+    @seconds.to_f /
+      (ORBITAL_PERIOD_RATES[planet] * EARTH_ORBITAL_PERIOD_IN_SECONDS)
   end
 end
