@@ -11,9 +11,7 @@ class HighScores
     @scores = scores
   end
 
-  def scores
-    @scores
-  end
+  attr_reader :scores
 
   def latest
     @scores.last
