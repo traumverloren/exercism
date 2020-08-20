@@ -1,15 +1,7 @@
-=begin
-Write your code for the 'Rna Transcription' exercise in this file. Make the tests in
-`rna_transcription_test.rb` pass.
+# frozen_string_literal: true
 
-To get started with TDD, see the `README.md` file in your
-`ruby/rna-transcription` directory.
-=end
-
-class Complement
-  NUCLEOTIDE_COMPLEMENT = { 'G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U' }
-
+module Complement
   def self.of_dna(strand)
-    strand.split('').map { |item| NUCLEOTIDE_COMPLEMENT[item] }.join
+    strand.tr('GCTA', 'CGAU')
   end
 end
