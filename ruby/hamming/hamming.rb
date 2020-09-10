@@ -11,8 +11,7 @@ module Hamming
     arr1 = strand1.split('')
     arr2 = strand2.split('')
 
-    strand_comparison = arr1.zip(arr2).map { |a, b| a == b }
-    hamming_distance = strand_comparison.tally[false]
+    hamming_distance = arr1.zip(arr2).reject { |a, b| a == b }.count
 
     hamming_distance || 0
   end
