@@ -6,13 +6,6 @@ module Hamming
       raise ArgumentError, 'Strands must be of equal length'
     end
 
-    return 0 if strand1.empty?
-
-    arr1 = strand1.split('')
-    arr2 = strand2.split('')
-
-    hamming_distance = arr1.zip(arr2).reject { |a, b| a == b }.count
-
-    hamming_distance || 0
+    strand1.each_char.zip(strand2.each_char).count { |a, b| a != b }
   end
 end
